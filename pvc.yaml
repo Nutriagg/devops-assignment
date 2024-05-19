@@ -7,6 +7,7 @@ spec:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 2Gi
+      storage: 1Gi
   volumeName: pv-postgres
+  storageClassName: ""  # Explicitly indicate no storage class
 

@@ -1,3 +1,4 @@
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: app-deployment
@@ -28,6 +29,6 @@ spec:
         - name: RAILS_MASTER_KEY
           value: 8af814b3e08d9e263c6635f231fc541f
         - name: POSTGRES_HOST
-          value: postgres
+          value: postgres-svc
 
         imagePullPolicy: Always

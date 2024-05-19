@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: postgres
+  name: state-postgres
   namespace: default
 spec:
   selector:
@@ -14,31 +14,23 @@ spec:
       labels:
         app: postgres
     spec:
+      volumes:
+        - name: task-pv-storage
+          persistentVolumeClaim:
+            claimName: pvc-postgres
       containers:
       - name: postgres
-        image: postgres:latest
+        image: "postgres"
         ports:
         - containerPort: 5432
           name: postgres
         volumeMounts:
-        - name: pg-data
-          mountPath: /var/lib/postgresql/data
+          - mountPath: "/var/lib/postgresql/data"
+            name: task-pv-storage
         env:
         - name: POSTGRES_DB
           value: mydatabase
         - name: POSTGRES_USER
           value: myuser
         - name: POSTGRES_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: postgres-secret
-              key: password
-  volumeClaimTemplates:
-  - metadata:
-      name: pg-data
-    spec:
-      accessModes: ["ReadWriteOnce"]
-      resources:
-        requests:
-          storage: 10Gi
-
+          value: password
