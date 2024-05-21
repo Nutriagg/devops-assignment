@@ -1,26 +1,2 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
+Ruby on Rails Application Deployment on Kubernetes with Tekton CI/CD and ArgoCD
+This repository contains a Ruby on Rails application deployed on Kubernetes, utilizing a PostgreSQL database and automated with Tekton pipelines for CI/CD and ArgoCD for continuous deployment.
