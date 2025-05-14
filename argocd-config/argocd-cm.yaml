@@ -5,7 +5,7 @@ metadata:
   namespace: argocd
 data:
   repository.credentials: |
-    - url: https://github.com/tejaskawde/test-makerble.git
+    - url: https://github.com/Nutriagg/devops-assignment.git
       usernameSecret:
         name: github-credentials
         key: username
@@ -13,6 +13,6 @@ data:
         name: github-credentials
         key: password
   repositories: |
-    - url: https://github.com/tejaskawde/test-makerble.git
+    - url: https://github.com/Nutriagg/devops-assignment.git
       type: git
 
