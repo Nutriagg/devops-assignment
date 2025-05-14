@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: 'https://github.com/tejaskawde/test-makerble.git'
+    repoURL: 'https://github.com/Nutriagg/devops-assignment.git'
     targetRevision: HEAD
     path: manifests
   destination:
