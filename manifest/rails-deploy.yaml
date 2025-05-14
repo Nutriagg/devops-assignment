@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: myapp
-        image: shubham554/ruby-app:v2  # Replace with your application image
+        image: shubham554/ruby-app:v3  # Replace with your application image
         ports:
         - containerPort: 3000  # Adjust according to your application's port
         env:
