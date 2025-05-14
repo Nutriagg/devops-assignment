@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: myapp
-        image: "docker.io/tejaskawde/ruby:v1"  # Replace with your application image
+        image: "docker.io/shubham554/ruby-app:v1"  # Replace with your application image
         ports:
         - containerPort: 3000  # Adjust according to your application's port
         env:
