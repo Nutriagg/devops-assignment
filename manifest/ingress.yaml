@@ -3,6 +3,7 @@ kind: Ingress
 metadata:
   name: gogs-ingress
 spec:
+  ingressClassName: nginx
   rules:
   - host: demo.ing.com
     http:
