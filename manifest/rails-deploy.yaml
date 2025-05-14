@@ -27,7 +27,7 @@ spec:
         - name: POSTGRES_PASSWORD
           value: password
         - name: RAILS_MASTER_KEY
-          value: 8af814b3e08d9e263c6635f231fc541f
+          value: 85532d93d03b27210354e112c92e9871
         - name: POSTGRES_HOST
           value: postgres-svc
 
