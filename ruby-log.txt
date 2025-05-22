@@ -1,0 +1,346 @@
+cat log.txt
+    1  sudo chmod 666 /var/run/docker.sock
+    2  egrep -q 'vmx|svm' /proc/cpuinfo && echo yes || echo no
+    3  sudo apt install qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils virtinst libvirt-daemon
+    4  curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+    5  sudo apt install -y curl wget apt-transport-https
+    6  sudo install minikube-linux-amd64 /usr/local/bin/minikube
+    7  minikube version
+    8  curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+    9  chmod +x kubectl
+   10  sudo mv kubectl /usr/local/bin/
+   11  kubectl version --client --output=yaml
+   12  minikube start --vm-driver docker
+   13  minikube start --addons=ingress --cpus=2 --cni=flannel --install-addons=true --Kubernetes-version=stable --memory=6g
+   14  minikube status
+   15  minikube start --driver=docker
+   16  kubectl create ns argocd
+   17  kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/v2.5.8/manifests/install.yaml
+   18  kubectl get all -n argocd
+   19  kubectl get all -n argocd
+   20  clear
+   21  sudo apt update -y
+   22  sudo apt install curl wget apt-transport-https -y
+   23  sudo apt install docker.io
+   24  sudo usermod -aG docker $USER && newgrp docker
+   25  minikube statu
+   26  minikube status
+   27  minikube start --vm-driver docker
+   28  minikube status
+   29  minikube start --driver=docker
+   30  kubectl get ns
+   31  kubectl get all -n argocd
+   32  kubectl get all -n argocd
+   33  tmux new-session -d 'kubectl port-forward svc/argocd-server -n argocd --address 0.0.0.0 8080:443'
+   34  kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
+   35  kubectl cluster-info
+   36  kubectl apply --filename https://storage.googleapis.com/tekton-releases/pipeline/latest/release.yaml
+   37  kubectl get pods --namespace tekton-pipelines --watch
+   38  kubectl get svc --all-namespaces -o go-template='{{range .items}}{{range .spec.ports}}{{if .nodePort}}{{.nodePort}}: {{$.metadata.name}}{{"\n"}}{{end}}{{end}}{{end}}'
+   39  kubectl describe svc tekton-pipelines-controller -n tekton-pipelines
+   40  kubectl describe svc tekton-pipelines-webhook -n tekton-pipelines
+   41  kubectl apply --filename https://storage.googleapis.com/tekton-releases/dashboard/latest/release.yaml
+   42  tmux new-session -d 'kubectl port-forward --address 0.0.0.0 -n tekton-pipelines service/tekton-dashboard 9097:9097'
+   43  git clonehttps://github.com/csae99/Budget-App.git
+   44  git clone https://github.com/csae99/Budget-App.git
+   45  cd Budget-App/
+   46  sudo docker-compose up
+   47  cd ..
+   48  rm -rf Budget-App
+   49  git clone https://github.com/csae99/Budget-App.git
+   50  cd Budget-App/
+   51  sudo docker-compose up
+   52  docker-compose down -v
+   53  ll
+   54  chmod 777 docker-compose.yml
+   55  rm docker-compose.yml
+   56  vim docker-compose.yml
+   57  cd config/
+   58  ll
+   59  vim database.yml
+   60  cd ..
+   61  sudo docker-compose up --build
+   62  docker-compose down -v
+   63  vim docker-compose.yml
+   64  cat docker-compose.yml
+   65  rm docker-compose.yml
+   66  vim docker-compose.yml
+   67  sudo docker-compose up --build -d
+   68  dosker ps
+   69  docker ps
+   70  cd manifest/
+   71  ls
+   72  cat rails-deployment.yml
+   73  minikube status
+   74  sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+   75  sudo chmod +x /usr/local/bin/docker-compose
+   76  docker-compose --version
+   77  sudo usermod -aG docker $USER
+   78  sudo usermod -aG docker $USER && newgrp docker
+   79  ls
+   80  kubectl get pods
+   81  minikube status
+   82  kubectl get pods -n argocd
+   83  kubectl get all
+   84  cd Budget-App/
+   85  cd manifest/
+   86  kubectl apply -f .
+   87  kubectl delete -f .
+   88  cd ..
+   89  sudo rm -rf Budget-App/
+   90  clear
+   91  git clone https://github.com/Nutriagg/Devops-Assignment.git
+   92  cd Devops-Assignment/
+   93  sudo docker-compose up --build
+   94  cd Bud
+   95  cd Budget-App/
+   96  cd manifest/
+   97  kubectl apply -f .
+   98  echo "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" | base64 -decode
+   99  echo "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" | base64 --decode
+  100  echo "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" | base56 --decode
+  101  echo"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" | base64 --decode
+  102  rm config/credentials.yml.enc
+  103  EDITOR="nano" bin/rails credentials:edit
+  104  sudo apt install ruby-full
+  105  gem install rails
+  106  sudo gem install rails
+  107  sudo apt update && sudo apt install -y build-essential libpq-dev nodejs
+  108  sudo gem install rails
+  109  cd Devops-Assignment/config/
+  110  cd ..
+  111  rm config/credentials.yml.enc
+  112  EDITOR="nano" bin/rails credentials:edit
+  113  rbenv install 3.2.0
+  114  rbenv local 3.2.0
+  115  sudo apt install rbenv
+  116  rbenv install 3.2.0
+  117  cd ~/.rbenv/plugins/ruby-build
+  118  git pull
+  119  cd ..
+  120  git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+  121  exec "$SHELL"
+  122  rbenv install 3.2.0
+  123  ls
+  124  docker-compose down -v
+  125  cd Devops-Assignment/
+  126  docker-compose down -v
+  127  docker-compose up --build
+  128  cd Devops-Assignment/
+  129  git pull
+  130  clear
+  131  minikube status
+  132  kubectl get -n argocd
+  133  kubectl get ns
+  134  kubectl get all -n argocd
+  135  kubectl get all
+  136  cd manifest/
+  137  kubectl apply -f .
+  138  kubectl delete -f .
+  139  minikube ststus
+  140*
+  141  kubectl get all -n argocd
+  142  git pull
+  143  kubectl apply -f .
+  144  kubectl get all
+  145  kubectl describe pod/app-deployment-7bbd6f69b5-zdht9
+  146  kubectl get all
+  147  kubectl logs pod/app-deployment-7bbd6f69b5-zdht9
+  148  kubectl delete -f .
+  149  git pull
+  150  cat rails-deploy.yaml
+  151  kubectl apply -f .
+  152  watch kubectl get all
+  153  kubectl delete -f .
+  154  kubectl apply -f .
+  155  watch kubectl get all
+  156  kubectl logs pod/app-deployment-9d6f6699d-zgz5v
+  157  cd ..
+  158*
+  159  kubectl delete -f .
+  160  cd manifest/
+  161  kubectl delete -f .
+  162  cd ..
+  163  git pull
+  164  dos2unix bin/docker-entrypoint
+  165  sudo apt install dos2unix
+  166  dos2unix bin/docker-entrypoint
+  167  docker login
+  168  docker build -t shubham554/ruby-app:v4 .
+  169  docker push shubham554/ruby-app:v4
+  170  git pull
+  171  cd manifest/
+  172  kubectl apply -f .
+  173  watch kubectl get all
+  174  kubectl get all
+  175  cd ..
+  176  kubectl apply -f argocd-config/
+  177  kubectl apply -f argocd-config/
+  178  kubectl get all -n argocd
+  179  kubectl delete -f argocd-config/
+  180  kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/v2.5.8/manifests/install.yaml
+  181  kubectl get all -n argocd
+  182  kubectl get pods -n ingress-nginx
+  183  kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.9.4/deploy/static/provider/cloud/deploy.yaml
+  184*
+  185  kubectl get pods -n ingress-nginx
+  186  sudo vim /etc/hosts
+  187  cd manifest/
+  188  kubectl apply -f .
+  189  curl http://demo.ing.com
+  190  kubectl get all
+  191  kubectl get ingress
+  192  kubectl get pods -n ingress-nginx
+  193* kubectl get ingress
+NAME           CLASS    HOSTS          ADDRESS   PORTS   AGE
+gogs-ingress   <none>   demo.ing.com             80      33m
+ubuntu@ip-172-31-32-105:~/Devops-Assignment/manifest$ ^C
+ubuntu@ip-172-31-32-105:~/Devops-Assignment/manifest$ kubectl get pods -n ingress-nginx
+NAME                                        READY   STATUS      RESTARTS   AGE
+ingress-nginx-admission-create-65t8v        0/1     Completed   0          4m48s
+ingress-nginx-admission-patch-stk9s         0/1     Completed   1          4m48s
+ingress-nginx-controller-7d76478684-tk2sx   1/1     Running     0          4m48s
+ubuntu@ip-172-31-32-105:~/Devops-Assignment/manifest$ cat ^[[200~sudo nano /etc/hosts
+cat: ''$'\033''[200~sudo': No such file or directory
+cat: nano: No such file or directory
+127.0.0.1 localhost
+43.205.229.38 demo.ing.com
+# The following lines are desirable for IPv6 capable hosts
+::1 ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+ff02::3 ip6-allhosts
+
+  194  kubectl get svc -n ingress-nginx
+  195  kubectl edit svc ingress-nginx-controller -n ingress-nginx
+  196  kubectl get svc -n ingress-nginx
+  197  http://demo.ing.com:30089
+  198  curl http://localhost:30089
+  199  curl http://demo.ing.com:30089
+  200  kubectl edit svc ingress-nginx-controller -n ingress-nginx
+  201  kubectl get svc -n ingress-nginx
+  202  curl http://43.205.229.38:30089
+  203  cat /etc/hosts
+  204  kubectl get svc -n ingress-nginx
+  205  kubectl get pods -n ingress-nginx -o wide
+  206  kubectl logs -n ingress-nginx -l app.kubernetes.io/name=ingress-nginx
+  207  git pull
+  208  kubectl apply -f .
+  209  kubectl get all
+  210  kubectl logs -n ingress-nginx -l app.kubernetes.io/name=ingress-nginx
+  211  curl http://43.205.229.38:32309
+  212  curl http://43.205.229.38:30089
+  213  kubectl get pods -n ingress-nginx -o wide
+  214  kubectl get svc -n ingress-nginx
+  215  kubectl get all
+  216  NAME                                  READY   STATUS    RESTARTS   AGE
+  217  pod/app-deployment-6cf69595cf-g8gtr   1/1     Running   0          50m
+  218  pod/state-postgres-0                  1/1     Running   0          50m
+  219  NAME                     TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)    AGE
+  220  service/app-deployment   ClusterIP   10.109.133.151   <none>        3000/TCP   50m
+  221  service/kubernetes       ClusterIP   10.96.0.1        <none>        443/TCP    20h
+  222  service/postgres-svc     ClusterIP   None             <none>        5432/TCP   50m
+  223  NAME                             READY   UP-TO-DATE   AVAILABLE   AGE
+  224  deployment.apps/app-deployment   1/1     1            1           50m
+  225  NAME                                        DESIRED   CURRENT   READY   AGE
+  226  replicaset.apps/app-deployment-6cf69595cf   1         1         1       50m
+  227  NAME                              READY   AGE
+  228  statefulset.apps/state-postgres   1/1     50m
+  229  ubuntu@ip-172-31-32-105:~/Devops-Assignment/manifest$ kubectl logs -n ingress-nginx -l app.kubernetes.io/name=ingress-nginx
+  230  I0514 14:51:26.700329       6 leaderelection.go:245] attempting to acquire leader lease ingress-nginx/ingress-nginx-leader...
+  231  I0514 14:51:26.702485       6 nginx.go:323] "Starting validation webhook" address=":8443" certPath="/usr/local/certificates/cert" keyPath="/usr/local/certificates/key"
+  232  I0514 14:51:26.702841       6 controller.go:190] "Configuration changes detected, backend reload required"
+  233  I0514 14:51:26.711082       6 leaderelection.go:255] successfully acquired lease ingress-nginx/ingress-nginx-leader
+  234  I0514 14:51:26.711381       6 status.go:84] "New leader elected" identity="ingress-nginx-controller-7d76478684-tk2sx"
+  235  I0514 14:51:26.829467       6 controller.go:210] "Backend successfully reloaded"
+  236  I0514 14:51:26.829535       6 controller.go:221] "Initial sync, sleeping for 1 second"
+  237  I0514 14:51:26.829568       6 event.go:298] Event(v1.ObjectReference{Kind:"Pod", Namespace:"ingress-nginx", Name:"ingress-nginx-controller-7d76478684-tk2sx", UID:"df866356-8047-4806-9995-c8f5553b70d4", APIVersion:"v1", ResourceVersion:"82692", FieldPath:""}): type: 'Normal' reason: 'RELOAD' NGINX reload triggered due to a change in configuration
+  238  W0514 14:53:22.785063       6 controller.go:331] ignoring ingress gogs-ingress in default based on annotation : ingress does not contain a valid IngressClass
+  239  I0514 14:53:22.785087       6 main.go:107] "successfully validated configuration, accepting" ingress="default/gogs-ingress"
+  240  W0514 14:51:15.253611       1 client_config.go:618] Neither --kubeconfig nor --master was specified.  Using the inClusterConfig.  This might not work.
+  241  {"err":"secrets \"ingress-nginx-admission\" not found","level":"info","msg":"no secret found","source":"k8s/k8s.go:229","time":"2025-05-14T14:51:15Z"}
+  242  {"level":"info","msg":"creating new secret","source":"cmd/create.go:28","time":"2025-05-14T14:51:15Z"}
+  243  W0514 14:51:15.875363       1 client_config.go:618] Neither --kubeconfig nor --master was specified.  Using the inClusterConfig.  This might not work.
+  244  {"level":"info","msg":"patching webhook configurations 'ingress-nginx-admission' mutating=false, validating=true, failurePolicy=Fail","source":"k8s/k8s.go:118","time":"2025-05-14T14:51:15Z"}
+  245  {"level":"info","msg":"Patched hook(s)","source":"k8s/k8s.go:138","time":"2025-05-14T14:51:15Z"}
+  246  ubuntu@ip-172-31-32-105:~/Devops-Assignment/manifest$ curl http://43.205.229.38:32309
+  247  curl: (7) Failed to connect to 43.205.229.38 port 32309 after 1 ms: Couldn't connect to server
+  248  ubuntu@ip-172-31-32-105:~/Devops-Assignment/manifest$ curl http://43.205.229.38:30089
+  249  curl: (7) Failed to connect to 43.205.229.38 port 30089 after 0 ms: Couldn't connect to server
+  250  ubuntu@ip-172-31-32-105:~/Devops-Assignment/manifest$ kubectl get pods -n ingress-nginx -o wide
+  251  NAME                                        READY   STATUS      RESTARTS   AGE   IP            NODE       NOMINATED NODE   READINESS GATES
+  252  ingress-nginx-admission-create-65t8v        0/1     Completed   0          23m   10.244.0.44   minikube   <none>           <none>
+  253  ingress-nginx-admission-patch-stk9s         0/1     Completed   1          23m   10.244.0.45   minikube   <none>           <none>
+  254  ingress-nginx-controller-7d76478684-tk2sx   1/1     Running     0          23m   10.244.0.46   minikube   <none>           <none>
+  255  ubuntu@ip-172-31-32-105:~/Devops-Assignment/manifest$ kubectl get svc -n ingress-nginx
+  256  NAME                                 TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)                      AGE
+  257  ingress-nginx-controller             NodePort    10.105.125.136   <none>        80:30089/TCP,443:30163/TCP   23m
+  258  ingress-nginx-controller-admission   ClusterIP   10.102.210.27    <none>        443/TCP                      23m
+  259  clear
+  260  kubectl edit svc ingress-nginx-controller -n ingress-nginx
+  261  kubectl get svc -n ingress-nginx
+  262  kubectl describe svc/ingress-nginx-controller -n ingress-nginx
+  263  kubectl logs svc/ingress-nginx-controller -n ingress-nginx
+  264  kubectl get svc -n ingress-nginx
+  265  docker image prune -a
+  266  docker image ls
+  267  docker image prune -a
+  268  cd ..
+  269  minikube delete
+  270  docker system prune -a
+  271  curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+  272  sudo install minikube-linux-amd64 /usr/local/bin/minikube
+  273  minikube version
+  274  minikube start --vm-driver docker
+  275  minikube status
+  276  minikube start --driver=docker
+  277  kubectl get noe
+  278  kubectl get node
+  279  kubectl get all
+  280  cd Devops-Assignment/manifest/
+  281  kubectl apply -f .
+  282  minikube tunnel
+  283  kubectl create ns argocd
+  284  kubectl get all -n argocd
+  285  kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/v2.5.8/manifests/install.yaml
+  286  tmux new-session -d 'kubectl port-forward svc/argocd-server -n argocd --address 0.0.0.0 8080:443'
+  287  kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
+  288  kubectl apply -f .
+  289  watch kubectl get all
+  290  kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.9.4/deploy/static/provider/cloud/deploy.yaml
+  291  kubectl get svc -n ingress-nginx
+  292  sudo vim /etc/hosts
+  293  kubectl get ingress
+  294  sudo vim /etc/hosts
+  295  cat /etc/hosts
+  296  sudo vim /etc/hosts
+  297  cat /etc/hosts
+  298  curl http://demo.ing.com
+  299  kubectl get ingress gogs-ingress -o yaml
+  300  kubectl delete -f .
+  301  git pull
+  302  kubectl apply -f .
+  303  kubectl get svc
+  304  kubectl get all
+  305  curl http://demo.ing.com
+  306  kubectl logs deployment/app-deployment
+  307  kubectl logs pod/app-deployment-6cf69595cf-5k8cb
+  308  kubectl get all
+  309*
+  310  kubectl exec -it pod/app-deployment-6cf69595cf-5k8cb -- bin/rails db:migrate
+  311  curl http://demo.ing.com
+  312  echo "$(minikube ip) demo.ing.com" | sudo tee -a /etc/hosts
+  313  minikube addons enable ingress
+  314  kubectl get all
+  315  kubectl get all -n ingress-nginx
+  316  kubectl edit service/ingress-nginx-controller -n ingress-nginx
+  317  kubectl get all -n ingress-nginx
+  318  kubectl get ingress
+  319  curl http://demo.ing.com
+  320  cd ..
+  321  git pull
+  322  cd Devops-Assignment/
+  323  git pull
+  324  history >>log.txt

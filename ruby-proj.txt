@@ -1,0 +1,106 @@
+sudo apt update -y
+sudo apt install curl wget apt-transport-https -y
+sudo apt install docker.io
+sudo usermod -aG docker $USER && newgrp docker
+sudo chmod 666 /var/run/docker.sock
+sudo apt install qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils virtinst libvirt-daemon
+sudo adduser -a $USER libvirt
+sudo adduser -a $USER libvirt-qemu
+newgrp libvirt
+newgrp libvirt-qemu
+
+curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+sudo install minikube-linux-amd64 /usr/local/bin/minikube
+minikube version
+
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+chmod +x ./kubectl 
+sudo mv kubectl /usr/local/bin/
+
+kubectl version --client --output=yaml
+minikube start --vm-driver docker
+minikube status
+minikube start --driver=docker
+kubectl create ns argocd
+kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/v2.5.8/manifests/install.yaml
+kubectl get all -n argocd
+tmux new-session -d 'kubectl port-forward svc/argocd-server -n argocd --address 0.0.0.0 8080:443'
+kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
+
+kubectl cluster-info
+
+# 1. Install Tekton Pipelines
+kubectl apply --filename https://storage.googleapis.com/tekton-releases/pipeline/latest/release.yaml
+
+# 2. Watch pods in tekton-pipelines namespace
+kubectl get pods --namespace tekton-pipelines --watch
+
+# 3. (Optional) View services in all namespaces (with ports)
+kubectl get svc --all-namespaces -o go-template='{{range .items}}{{range .spec.ports}}{{if .nodePort}}{{.nodePort}}: {{$.metadata.name}}{{"\n"}}{{end}}{{end}}{{end}}'
+
+# 4. Describe Tekton services (corrected svc names)
+kubectl describe svc tekton-pipelines-controller -n tekton-pipelines
+kubectl describe svc tekton-pipelines-webhook -n tekton-pipelines
+
+# 5. Install kubectl via snap if not already installed
+sudo snap install kubectl --classic
+
+# 6. Apply Tekton Dashboard
+kubectl apply --filename https://storage.googleapis.com/tekton-releases/dashboard/latest/release.yaml
+
+# 7. Port forward Tekton Dashboard (correct version)
+kubectl port-forward -n tekton-pipelines service/tekton-dashboard 9097:9097
+tmux new-session -d 'kubectl port-forward --address 0.0.0.0 -n tekton-pipelines service/tekton-dashboard 9097:9097'
+
+
+# 1. Download the latest Docker Compose binary
+sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
+# 2. Make the binary executable
+sudo chmod +x /usr/local/bin/docker-compose
+
+# 3. Verify the installation
+docker-compose --version
+
+# 4. Add current user to the Docker group (to avoid using sudo with docker)
+sudo usermod -aG docker $USER
+
+
+
+
+
+
+
+
+
+
+# .env file
+
+# PostgreSQL settings
+POSTGRES_DB=Devops_db
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=
+POSTGRES_HOST=db
+
+# Rails settings
+RAILS_ENV=development
+RAILS_MASTER_KEY=85532d93d03b27210354e112c92e9871
+
+
+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
+
+sudo apt update
+sudo apt install -y libffi-dev libyaml-dev build-essential libssl-dev zlib1g-dev libreadline-dev libgdbm-dev libncurses5-dev libncursesw5-dev libdb-dev
+dos2unix bin/docker-entrypoint
+docker build --no-cache -t shubham554/ruby-app:v2 .
+docker push shubham554/ruby-app:v2
+
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.9.4/deploy/static/provider/cloud/deploy.yaml
+kubectl get pods -n ingress-nginx
+kubectl get svc -n ingress-nginx
+
+sudo vim /etc/hosts
+
+kubectl describe ingress gogs-ingress
+kubectl get ingress
+kubectl get svc -n ingress-nginx
